@@ -1,30 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
-function App() {
-  function mokou() {
-    window.alert("helloworld")
-  }
+const App= () =>{
+  const Name = 'seryon'
+  const[count,setCount] = useState(0);
+
+  const increment　= () => {
+    setCount(count+1);
+    console.log(count);
+  };
+ 
   return (
-    <div className="App">
-      <header className="App-header">
+   
+<div>
+  <h1>Hello world</h1>
+  <h2>Hello world</h2>
+  <h3>Hello world</h3>
+  <h4>Hello world</h4>
+
+<button
+  onClick={() => window.alert("Hello world")}
+  ></button>
 
 
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+<input type="text"/>
+<a href="#">a タグ</a>
 
-        </a>
-
-
-        <button onClick={mokou}>
-          helloworld
-          </button>
-      </header >
-    </div >
+{Name}
+<div>
+     <button onClick={increment}></button>
+   </div>
+   <button>いいね！</button>
+</div >
   );
 }
 
