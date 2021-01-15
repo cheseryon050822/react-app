@@ -10,6 +10,12 @@ const App= () =>{
     setCount(count+1);
     console.log(count);
   };
+  const decrement　= () => {
+    setCount(count-1);
+    console.log(count);
+  };
+  
+ 
  
   return (
    
@@ -29,10 +35,15 @@ const App= () =>{
 
 {Name}
 <div>
-     <button onClick={increment}></button>
+     <button onClick={increment}>
+       いいね！
+     </button>
+     <button onClick={decrement}>
+       よくないね！
+     </button>
+     {count}
    </div>
-   <button>いいね！</button>
-</div >
+</div>
   );
 }
 
