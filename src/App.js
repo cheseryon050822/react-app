@@ -4,6 +4,15 @@ import { useState } from 'react';
 import React from 'react';　
 import Card from './Card';
 
+const sampleArreay=[
+  {id:1,Name:'aaa',date:1962},
+  {id:2,Name:'bbb',date:1964},
+  {id:3,Name:'ccc',date:1985},
+  {id:4,Name:'ddd',date:2003},
+  {id:5,Name:'eee',date:2005}
+]
+
+
 
 const App= () =>{
   const Name = 'seryon'
@@ -26,7 +35,7 @@ const App= () =>{
     setword(word+"seryon");
     console.log(word);
   }
-   
+
   return (
 
 <div>
@@ -42,7 +51,14 @@ const App= () =>{
 
 <input type="text"/>
 <a href="#">a タグ</a>
+<div>
+  {sampleArreay.map((date) =>{
+    console.log(date);
+      return<Card Name={date.Name} date={date.date} />;
+  })}
 
+
+</div>
 {Name}
 <div>
      <button onClick={increment}>
@@ -61,6 +77,9 @@ const App= () =>{
      {word}
    </div>
 </div>
+
+
+
   );
 }
 
