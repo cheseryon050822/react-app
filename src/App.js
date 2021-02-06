@@ -5,11 +5,11 @@ import React from 'react';　
 import Card from './Card';
 
 const sampleArreay=[
-  {id:1,Name:'aaa',date:1962},
-  {id:2,Name:'bbb',date:1964},
-  {id:3,Name:'ccc',date:1985},
-  {id:4,Name:'ddd',date:2003},
-  {id:5,Name:'eee',date:2005}
+  {id:'id:1',Name:'Name:aaa',date:'date:1962'},
+  {id:'id:2',Name:'Name:bbb',date:'date:1964'},
+  {id:'id:3',Name:'Name:ccc',date:'date:1985'},
+  {id:'id:4',Name:'Name:ddd',date:'date:2003'},
+  {id:'id:5',Name:'Name:eee',date:'date:2005'}
 ]
 
 
@@ -35,7 +35,6 @@ const App= () =>{
     setword(word+"seryon");
     console.log(word);
   }
-
   return (
 
 <div>
@@ -52,13 +51,44 @@ const App= () =>{
 <input type="text"/>
 <a href="#">a タグ</a>
 <div>
-  {sampleArreay.map((date) =>{
+    {sampleArreay.map((date) =>{
     console.log(date);
-      return<Card Name={date.Name} date={date.date} />;
-  })}
-
-
+      return (
+        <table bordar="1">
+          <tr>
+            <td>id</td>
+            <td>Name</td>
+            <td>date</td> 
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>aaa</td>
+            <td>1962</td> 
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>bbb</td>
+            <td>1964</td> 
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>ccc</td>
+            <td>1985</td> 
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>ddd</td>
+            <td>2003</td> 
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>eee</td>
+            <td>2005</td> 
+          </tr>
+        </table>       
+      )})}      
 </div>
+
 {Name}
 <div>
      <button onClick={increment}>
