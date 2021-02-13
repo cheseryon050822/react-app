@@ -5,11 +5,11 @@ import React from 'react';　
 import Card from './Card';
 
 const sampleArreay=[
-  {id:'id:1',Name:'Name:aaa',date:'date:1962'},
-  {id:'id:2',Name:'Name:bbb',date:'date:1964'},
-  {id:'id:3',Name:'Name:ccc',date:'date:1985'},
-  {id:'id:4',Name:'Name:ddd',date:'date:2003'},
-  {id:'id:5',Name:'Name:eee',date:'date:2005'}
+  {id:'1',Name:'aaa',date:'1962'},
+  {id:'2',Name:'bbb',date:'1964'},
+  {id:'3',Name:'ccc',date:'1985'},
+  {id:'4',Name:'ddd',date:'2003'},
+  {id:'5',Name:'eee',date:'2005'}
 ]
 
 
@@ -35,6 +35,15 @@ const App= () =>{
     setword(word+"seryon");
     console.log(word);
   }
+  const array1 =[
+    {id:'1',Name:'aaa',date:'1962'},
+    {id:'2',Name:'bbb',date:'1964'},
+    {id:'3',Name:'ccc',date:'1985'},
+    {id:'4',Name:'ddd',date:'2003'},
+    {id:'5',Name:'eee',date:'2005'} 
+];
+const map1 = array1.map (x=> x/1);
+
   return (
 
 <div>
@@ -44,49 +53,33 @@ const App= () =>{
   <h4>Hello world</h4>
   <Card/>
 <button onClick={() => window.alert("Hello world")}>
-  結ンデ開イテ羅刹ト骸
+  結ンデ開イテ羅刹  ト骸
   </button>
 
 
 <input type="text"/>
 <a href="#">a タグ</a>
 <div>
-    {sampleArreay.map((date) =>{
-    console.log(date);
-      return (
-        <table bordar="1">
-          <tr>
+  <table>
+  <tr>
             <td>id</td>
             <td>Name</td>
             <td>date</td> 
           </tr>
+  
+    {sampleArreay.map((date) =>{
+    console.log(map1);
+      return (
+        
           <tr>
-            <td>1</td>
-            <td>aaa</td>
-            <td>1962</td> 
+            <td>{date.id}</td>
+            <td>{date.Name}</td>
+            <td>{date.date}</td> 
           </tr>
-          <tr>
-            <td>2</td>
-            <td>bbb</td>
-            <td>1964</td> 
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>ccc</td>
-            <td>1985</td> 
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>ddd</td>
-            <td>2003</td> 
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>eee</td>
-            <td>2005</td> 
-          </tr>
-        </table>       
-      )})}      
+          
+              
+      )})}
+      </table>      
 </div>
 
 {Name}

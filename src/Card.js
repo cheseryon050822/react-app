@@ -7,9 +7,7 @@ const Card  = (props) =>{
     return (
   <div className="wrapper">
       <h1>Card</h1>
-       <h1>{id}</h1>
-       <h1>{Name}</h1>
-       <h1>{date}</h1>
+       <h1></h1>
   </div>
     );
 };
