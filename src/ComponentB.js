@@ -1,5 +1,5 @@
 import React from 'react'
-import {useHistory} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 const ComponentB = () => {
     const history= useHistory()
@@ -10,6 +10,7 @@ const ComponentB = () => {
         <div>
             ComponentB
             <button onClick={backPage}>ホームへ戻る</button>
+            <Link to="ComponentC">Cのページに移動</Link>
         </div>
     )
 }

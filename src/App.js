@@ -4,6 +4,7 @@ import React,{ useState } from 'react';　
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import ComponentA from './ComponentA';
 import ComponentB from './ComponentB';
+import ComponentC from './ComponentC';
 
 const sampleArreay=[
   {id:'1',Name:'aaa',date:'1962'},
@@ -21,6 +22,7 @@ const App= () =>{
      <Switch>
       <Route exact path="/" component={ComponentA}/>
       <Route exact path="/ComponentB" component={ComponentB}/>
+      <Route exact path="/ComponentC" component={ComponentC}/>
      </Switch>
     </Router>
   );
