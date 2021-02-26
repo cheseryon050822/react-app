@@ -1,18 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
-import React,{ useState } from 'react';　
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
-import ComponentA from './ComponentA';
-import ComponentB from './ComponentB';
-import ComponentC from './ComponentC';
 
-const sampleArreay=[
-  {id:'1',Name:'aaa',date:'1962'},
-  {id:'2',Name:'bbb',date:'1964'},
-  {id:'3',Name:'ccc',date:'1985'},
-  {id:'4',Name:'ddd',date:'2003'},
-  {id:'5',Name:'eee',date:'2005'}
-]
+import React from 'react';　
+import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
+import ComponentA from './components/ComponentA';
+import ComponentB from './components/ComponentB';
+import ComponentC from './components/ComponentC';
 
 
 
