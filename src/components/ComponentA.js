@@ -5,29 +5,34 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
 
 const ComponentA = () => {
-    const [count,setCount] = useState();
-    const [data,setdata]=useState();
-useEffect(() => {
-    console.log('空条徐倫');
+   const [data,setData] = useState([]);
 
-    axios.get('https://jsonplaceholder.typicode.com/todos')
-    .then(res =>{
-setdata (res.data)
-        console.log(res,'res check')
-    })
-},[]);
+   useEffect(() => {
+        handleFetch() 
+    },[]);
+
+    const handleFetch = async () => {
+      await axios.get('https://jsonplaceholder.typicode.com/todos')
+      .then(res => {
+        setData(res.data)
+      })
+    }
+
+
+    console.log(data)
 
     return(
     <div>
         <div>ComponentA</div>
         <Link to="ComponentB">ComponentBへ移動</Link>
+        
         <Table striped bordered hover>
   <thead>
     <tr>
-      <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
+      <th>{data.map}</th>
+      <th>{data.map}</th>
+      <th>{data.map}</th>
+      <th>{data.map}</th>
     </tr>
   </thead>
   <tbody>
@@ -49,7 +54,10 @@ setdata (res.data)
       <td>@twitter</td>
     </tr>
   </tbody>
-</Table>     
+</Table>
+              
+            
+      
     </div>
     );
 };
