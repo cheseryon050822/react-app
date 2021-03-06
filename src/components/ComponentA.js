@@ -12,7 +12,7 @@ const ComponentA = () => {
     },[]);
 
     const handleFetch = async () => {
-      await axios.get('https://jsonplaceholder.typicode.com/todos')
+      await axios.get('https://jsonplaceholder.typicode.com/posts')
       .then(res => {
         setData(res.data)
       })
@@ -26,33 +26,26 @@ const ComponentA = () => {
         <div>ComponentA</div>
         <Link to="ComponentB">ComponentBへ移動</Link>
         
-        <Table striped bordered hover>
+        <Table className="tableNo1">
   <thead>
     <tr>
-      <th>{data.map}</th>
-      <th>{data.map}</th>
-      <th>{data.map}</th>
-      <th>{data.map}</th>
+
+      <th>id</th>
+      <th>title</th>
+      <th>name</th>
+      <th>Body</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+  {data.map((value) =>(
+                        <tr>
+                          <td>{value.userId}</td>
+                            <td>{value.id}</td>
+                            <td>{value.title}</td>
+                            <td>{value.body}</td>
+                        </tr>
+                    ))}
+      
   </tbody>
 </Table>
               
