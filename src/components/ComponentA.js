@@ -26,7 +26,7 @@ const ComponentA = () => {
         <div>ComponentA</div>
         <Link to="ComponentB">ComponentBへ移動</Link>
         
-        <Table className="tableNo1">
+        <Table striped bordered hover variant="dark">
   <thead>
     <tr>
 
