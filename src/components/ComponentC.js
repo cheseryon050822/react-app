@@ -1,28 +1,30 @@
 import React,{useState,useEffect}from 'react'
 import { Link,useHistory } from 'react-router-dom'
-import {Table}from 'react-bootstrap';
+import {Table,Button}from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'
+
+
+    
 
 const ComponentC = () => {
     const history= useHistory ()
     const yayoi= () => {
         history.push("/ComponentB")
     }
-    const Tablest=() =>{
-        
-    }
+   
     const [data,setData] = useState([]);
 
     useEffect(() => {
-         handleFetch() 
+          
      },[]);
  
-     const handleFetch = async () => {
-       await axios.get('https://jsonplaceholder.typicode.com/posts')
-       .then(res => {
-         setData(res.data)
-       })
+ 
+     const gitdata =async() =>{
+        axios.get('https://jsonplaceholder.typicode.com/posts')
+        .then(res => {
+            setData(res.data)
+          })
      }
  
  
@@ -30,11 +32,14 @@ const ComponentC = () => {
  
     return(
         <div>
+         
             ComponentC
             <Link to="ComponentB">ComponentBへいってらっしゃーい</Link>
             <button onClick={yayoi}>ComponentBへ移動</button>
-            <button onClick={Tablest}>GitData</button>
-            
+        <Button
+        onClick={gitdata}
+        
+        >Gitdata</Button>          
     <Table striped bordered hover variant="dark">
     <thead>
     <tr>
@@ -46,8 +51,9 @@ const ComponentC = () => {
     </tr>
   </thead>
   <tbody>
-  {data.map((value) =>(
-                        <tr>
+  {data.map((value,index) =>(
+      
+                        <tr key={index}>
                           <td>{value.userId}</td>
                             <td>{value.id}</td>
                             <td>{value.title}</td>
@@ -61,6 +67,7 @@ const ComponentC = () => {
   
   
         </div>
+        
         
     )
 }
